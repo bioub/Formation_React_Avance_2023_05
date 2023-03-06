@@ -9,7 +9,7 @@ export default function Todos() {
       <TodoListContainer />
 
       <hr />
-      <Clock />
+      <Clock formatHour={(now) => now.toString()} />
     </div>
   );
 }

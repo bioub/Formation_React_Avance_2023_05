@@ -1,4 +1,8 @@
+import styles from './Home.module.css';
+
+
 import { Component, createElement } from 'react';
+import Card from '../Card/Card';
 import Select from '../Select/Select';
 
 // export default class Home extends Component {
@@ -30,13 +34,18 @@ export default class Home extends Component {
   render() {
     const { prenoms, selectedPrenom } = this.state;
     return (
-      <div>
+      <div className={styles.root}>
         <p>Vous avez sélectionné : {selectedPrenom}</p>
         <Select
           items={prenoms}
           selected={selectedPrenom}
           onSelected={(item) => this.setState({ selectedPrenom: item })}
         />
+
+        <Card>
+          <h2>Ceci provient de Home</h2>
+          <p>lorem</p>
+        </Card>
       </div>
     );
   }
