@@ -1,4 +1,4 @@
-import './Select.css';
+import styles from './Select.module.scss';
 
 import { Component, createRef } from 'react';
 
@@ -27,16 +27,22 @@ export default class Select extends Component {
     this.props.onSelected(item);
   };
 
-  componentDidMount() {
-    document.addEventListener('click', (event) => {
-      if (this.hostRef.current.contains(event.target)) {
-        return;
-      }
-      // console.log('document click');
-      this.setState({
-        opened: false,
-      });
+  handleDocumentClick = (event) => {
+    if (this.hostRef.current.contains(event.target)) {
+      return;
+    }
+    // console.log('document click');
+    this.setState({
+      opened: false,
     });
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.handleDocumentClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleDocumentClick);
   }
 
   render() {
@@ -44,13 +50,13 @@ export default class Select extends Component {
     const { opened } = this.state;
 
     return (
-      <div ref={this.hostRef} className="Select" onClick={this.toggleOpen}>
-        <div className="selected">{selected}</div>
+      <div ref={this.hostRef} className={styles.Select} onClick={this.toggleOpen}>
+        <div className={styles.selected}>{selected}</div>
         {opened && (
-          <div className="items">
+          <div className={styles.items}>
             {items.map((it) => (
               <div
-                className="item"
+                className={styles.item}
                 key={it}
                 onClick={() => this.handleItemClick(it)}
               >
