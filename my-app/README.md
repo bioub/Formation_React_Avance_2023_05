@@ -11,9 +11,9 @@ Si on passe une fonction `formatItem` au niveau de `Home` elle sera appelée dep
 
 Notre but est que chaque item s'affiche avec 2 balises :
 
-- <b>0: </b><span>Jean</span>
-- <b>1: </b><span>Paul</span>
-- <b>2: </b><span>Eric</span>
+- `<b>0: </b><span>Jean</span>`
+- `<b>1: </b><span>Paul</span>`
+- `<b>2: </b><span>Eric</span>`
 
 Créer la fonction correspondante au niveau de `Home` et l'appeler dans
 `Select` en utilisant un Fragment pour ne pas ajouter une balise supplémentaire autour des balises `b` et `span`.
