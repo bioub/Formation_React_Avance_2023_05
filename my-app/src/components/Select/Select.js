@@ -46,7 +46,7 @@ export default class Select extends Component {
   }
 
   render() {
-    const { items, selected } = this.props;
+    const { items, selected, formatItem } = this.props;
     const { opened } = this.state;
 
     return (
@@ -54,13 +54,13 @@ export default class Select extends Component {
         <div className={styles.selected}>{selected}</div>
         {opened && (
           <div className={styles.items}>
-            {items.map((it) => (
+            {items.map((it, i) => (
               <div
                 className={styles.item}
                 key={it}
                 onClick={() => this.handleItemClick(it)}
               >
-                {it}
+                {formatItem ? formatItem(it, i) : it}
               </div>
             ))}
           </div>

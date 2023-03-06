@@ -40,6 +40,7 @@ export default class Home extends Component {
           items={prenoms}
           selected={selectedPrenom}
           onSelected={(item) => this.setState({ selectedPrenom: item })}
+          formatItem={(it, i) => <><b>{i}:</b><span>{it}</span></>}
         />
 
         <Card>
