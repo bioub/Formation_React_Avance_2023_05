@@ -4,6 +4,10 @@ import styles from './Home.module.css';
 import { Component, createElement } from 'react';
 import Card from '../Card/Card';
 import Select from '../Select/Select';
+import { hideable } from '../../hocs/hideable';
+import Clock from '../Clock/Clock';
+
+const HideableClock = hideable(Clock);
 
 // export default class Home extends Component {
 //   render() {
@@ -28,7 +32,7 @@ import Select from '../Select/Select';
 
 export default class Home extends Component {
   state = {
-    prenoms: ['Jean', 'Paul', 'Eric'],
+    prenoms: ['Jean', 'Paul', 'Eric', 123],
     selectedPrenom: 'Jean',
   };
   render() {
@@ -47,6 +51,18 @@ export default class Home extends Component {
           <h2>Ceci provient de Home</h2>
           <p>lorem</p>
         </Card>
+
+        <HideableClock />
+
+        {/* Les higher order components peuvent dans 99% des cas être remplacés par
+          - des hooks (si l'objectif était d'obtenir des props supplémentaire, ex: withRouter)
+          - soit un composant avec children voir render props si de l'ui supplémentaire, ex: hideable)
+        */}
+        {/*
+        Le même comportement serait obtenu comme ceci
+        <Hideable>
+          <Clock />
+        </Hideable> */}
       </div>
     );
   }

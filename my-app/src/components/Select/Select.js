@@ -1,6 +1,7 @@
 import styles from './Select.module.scss';
 
 import { Component, createRef } from 'react';
+import classNames from 'classnames';
 
 export default class Select extends Component {
   hostRef = createRef(null);
@@ -35,7 +36,7 @@ export default class Select extends Component {
     this.setState({
       opened: false,
     });
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('click', this.handleDocumentClick);
@@ -50,10 +51,12 @@ export default class Select extends Component {
     const { opened } = this.state;
 
     return (
-      <div ref={this.hostRef} className={styles.Select} onClick={this.toggleOpen}>
-        <div className={styles.selected}>{selected}</div>
+      <div ref={this.hostRef} className={styles.root} onClick={this.toggleOpen}>
+        <div className={styles.selected}>{selected.toUpperCase()}</div>
         {opened && (
           <div className={styles.items}>
+          {/* <div className={styles.items} hidden={!opened}> */}
+          {/* <div className={classNames(styles.items, { [styles.hidden]: !opened })}> */}
             {items.map((it, i) => (
               <div
                 className={styles.item}

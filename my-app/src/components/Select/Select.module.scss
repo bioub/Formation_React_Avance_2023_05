@@ -1,15 +1,15 @@
-.Select {
+.root {
   position: relative;
   width: 200px;
   cursor: pointer;
 }
 
-.Select .selected {
+.selected {
   border: 1px solid black;
   padding: 5px;
 }
 
-.Select .items {
+.items {
   position: absolute;
   border: 1px solid black;
   width: 100%;
@@ -17,6 +17,10 @@
   background-color: white;
 }
 
-.Select .item {
+.item {
   padding: 5px;
+}
+
+.hidden {
+  display: none;
 }
