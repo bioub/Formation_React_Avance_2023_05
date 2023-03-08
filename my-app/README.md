@@ -47,3 +47,28 @@ Consommer le context avec le hook `useContext` dans `Home`
 
 Consommer également le context avec le hook `useContext` dans `TopBar` pour afficher le prénom dans la `TopBar`
 
+
+# Redux
+
+## Exercice 1
+
+Implémenter la suppression d'une todo avec Redux.
+
+- 1 - Créer la constante `TODO_DELETE` (`constants.js`)
+- 2 - Créer l'action creator `todoDelete` correspondant (`actions.js`)
+- 3 - Ajouter un cas dans le reducer `itemsReducer` (`reducer.js`) qui supprime la todo du tableau
+(de façon immuable : en créant un nouveau tableau, cf slide 72)
+
+Tester avec le "dispatcher" de l'extension redux devtools que la todo correspondant est bien supprimée
+
+## Exercice 2
+
+Reprendre le code de `TodoListContainer` le réécrire avec `useSelector` et `useDispatch` comme dans l'exemple dans react-communication, appeler `dispatch(todoDelete(/* votre payload */))` dans une fonction que vous passez à la props `onDeleteItem` de `TodosList`
+
+## Exercice 3 : Bonus
+
+- 1 - Installer `@reduxjs/toolkit`
+- 2 - remplacer `configureStore` dans index.js par celle de RTK
+- 3 - remplacer les actions dans `actions.js` par des `createAction` (comme
+dans les exemples de ce matin)
+- 4 - réécrire les reducers dans `reducers.js` avec `createReducer.js`
