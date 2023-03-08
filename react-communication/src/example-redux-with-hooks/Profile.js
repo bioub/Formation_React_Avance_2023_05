@@ -1,21 +1,30 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-function Profile() {
+function ProfileContainer() {
   const name = useSelector((state) => state.name);
   const dispatch = useDispatch();
+
+  function onSubmit(value) {
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        name: value,
+      },
+    });
+  }
+
+  return <Profile name={name} onSubmit={onSubmit} />;
+}
+
+function Profile({ name, onSubmit }) {
   return (
     <div className="Profile">
       <h2>Profile</h2>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          dispatch({
-            type: 'UPDATE_USER',
-            payload: {
-              name: event.target.name.value,
-            },
-          });
+          onSubmit(event.target.name.value);
         }}
       >
         <p>
@@ -30,4 +39,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default ProfileContainer;

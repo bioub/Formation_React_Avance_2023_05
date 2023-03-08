@@ -2,18 +2,18 @@ import React from 'react';
 import './Header.css';
 import { connect } from 'react-redux';
 
-function Header({ name }) {
+function Header({ prenom }) {
   return (
     <div className="Header">
       <h2>MyApp (Redux)</h2>
-      <span>Hello {name}</span>
+      <span>Hello {prenom}</span>
     </div>
   );
 }
 
 function mapStateToProps(state) {
   return {
-    name: state.name,
+    prenom: state.name,
   };
 }
 
