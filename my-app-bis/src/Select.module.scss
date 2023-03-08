@@ -1,0 +1,26 @@
+.root {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+}
+
+.selected {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.items {
+  position: absolute;
+  border: 1px solid black;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.item {
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}

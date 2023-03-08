@@ -9,6 +9,8 @@ import Home from '../Home/Home';
 import TryCatchErrorBoundary from '../TryCatchErrorBoundary/TryCatchErrorBoundary';
 
 export default function App() {
+  console.log('refresh App');
+
   return (
     <div className="App">
       <BrowserRouter>

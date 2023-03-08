@@ -1,4 +1,5 @@
 export default function TodoCount({ count }) {
+  console.log('refresh TodoCount');
   return (
     <div className="TodoCount">
       {count > 1 ? count + ' todos' : count + ' todo'} remaining

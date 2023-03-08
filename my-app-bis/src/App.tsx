@@ -15,10 +15,10 @@ function App() {
           {/* <Route path="/hello/:name">
             <Hello />
           </Route> */}
-          {/* <Route path="/hello/:name" component={Hello} /> */}
-          <Route path="/hello/:name">
+          <Route path="/hello/:name" component={Hello} />
+          {/* <Route path="/hello/:name">
             <HelloWithRouter />
-          </Route>
+          </Route> */}
         </Switch>
       </BrowserRouter>
     </div>
