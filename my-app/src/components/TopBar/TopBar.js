@@ -19,6 +19,9 @@ export default function TopBar() {
           <Button component={Link} to="/users" color="inherit">
             Users
           </Button>
+          <Button component={Link} to="/export" color="inherit">
+            Export Excel
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
