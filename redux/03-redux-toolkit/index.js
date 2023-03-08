@@ -1,5 +1,5 @@
+const { configureStore } = require('@reduxjs/toolkit');
 const { nameUpdate, todosAdd } = require('./actions');
-const { configureStore } = require('./configureStore');
 const { reducer } = require('./reducers');
 const { todosCountSelector } = require('./selectors');
 

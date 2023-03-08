@@ -19,7 +19,7 @@ exports.reducer =  function reducer(state = initialState, action) {
   if (action.type === NAME_UPDATE) {
     return {
       ...state,
-      name: action.value,
+      name: action.payload,
     };
   }
   if (action.type === TODOS_ADD) {
@@ -29,7 +29,7 @@ exports.reducer =  function reducer(state = initialState, action) {
         ...state.todos,
         items: [
           ...state.todos.items,
-          action.todo,
+          action.payload,
         ]
       }
     };
